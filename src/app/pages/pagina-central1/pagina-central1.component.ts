@@ -1,3 +1,5 @@
+
+import { first } from 'rxjs/operators';
 import { Component } from '@angular/core';
 import { TextoService } from '../../texto.service';
 
@@ -11,7 +13,7 @@ export class PaginaCentral1Component {
   texto: string = '';
   
   constructor(private textoService: TextoService) {
-    textoService.texto.first().subscribe((txt)=>{
+    textoService.texto.pipe(first()).subscribe((txt)=>{
       console.log('página 1 central carregando: ', txt);
       this.texto = txt;
     });
