@@ -1,18 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
+//import { WorkerAppModule } from '@angular/platform-webworker';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { RouterModule, Routes } from '@angular/router';
+import { ContenteditableDirective } from 'ng-contenteditable';
+//import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
+import { PaginaCentral1Component } from './pages/pagina-central1/pagina-central1.component';
+import { PaginaCentral2Component } from './pages/pagina-central2/pagina-central2.component';
+import { PaginaDireita1Component } from './pages/pagina-direita1/pagina-direita1.component';
+import { PaginaDireita2Component } from './pages/pagina-direita2/pagina-direita2.component';
+import { TextoService } from './texto.service';
 
+import { rotas } from './routes';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PaginaCentral1Component,
+    PaginaCentral2Component,
+    PaginaDireita1Component,
+    PaginaDireita2Component,
+    ContenteditableDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule ,
+    //WorkerAppModule ,
+    //CommonModule ,
+    FormsModule , 
+    FlexLayoutModule ,
+    RouterModule.forRoot(rotas)
   ],
-  providers: [],
+  providers: [
+    TextoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

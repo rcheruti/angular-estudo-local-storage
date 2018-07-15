@@ -1,0 +1,19 @@
+
+.container{
+  height: 100%;
+  width: 100%;
+}
+
+.menu{
+  border-right: 1px solid #ccc;
+  background: #f6f6f6;
+  
+  a{
+    display: block;
+    padding: 10px;
+  }
+}
+
+.panelCenter{
+  border-right: 1px solid #ccc;
+}
