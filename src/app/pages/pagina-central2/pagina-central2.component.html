@@ -1,3 +1,38 @@
-<p>
-  pagina-central2 works!
-</p>
+
+
+
+<mat-card style="margin: 20px;">
+  <h6>Forms Template Driven</h6>
+  <h2>Cadastro de produto</h2>
+  
+  <!--
+    Todo formulario deve ter declarado nele um atributo similar a ' #formulario="ngForm" ' ("formulario" é o nome da variável
+    onde estará o controlador do formulário, para fazer validações...).
+    Todo campo do formulário que usa "ngModel" deve declarar o atributo "name"!
+  -->
+  <form #formulario="ngForm" class="form-um">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Nome" [(ngModel)]="produto.nome" name="produto_nome" required/>
+    </mat-form-field>
+    
+    <mat-form-field class="full-width">
+      <mat-select placeholder="Tipo do produto" [(ngModel)]="produto.tipo" name="produto_tipo" required>
+        <mat-option *ngFor="let item of tipos" [value]="item">{{ item }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field class="full-width">
+      <input matInput [matDatepicker]="matDataValidade" [(ngModel)]="produto.validade" name="produto_validade" 
+        placeholder="Data de validade" required readonly/>
+      <mat-datepicker-toggle matSuffix [for]="matDataValidade"></mat-datepicker-toggle>
+      <mat-datepicker #matDataValidade disabled="false"></mat-datepicker>
+    </mat-form-field>
+    
+    <button mat-raised-button>Enviar</button>
+    
+    <div style="margin: 20px 0 0;">
+      <span>Valor final dos dados:</span>
+      <pre>{{ produto | json }}</pre>
+    </div>
+  </form>
+</mat-card>

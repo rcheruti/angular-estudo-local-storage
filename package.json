@@ -21,6 +21,8 @@
     "@angular/flex-layout": "^6.0.0-beta.16",
     "@angular/forms": "^6.0.9",
     "@angular/http": "^6.0.9",
+    "@angular/material": "^6.3.3",
+    "@angular/material-moment-adapter": "^6.3.3",
     "@angular/platform-browser": "^6.0.9",
     "@angular/platform-browser-dynamic": "^6.0.9",
     "@angular/platform-webworker": "^6.0.9",
@@ -28,6 +30,7 @@
     "@angular/router": "^6.0.9",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.4.1",
+    "moment": "^2.22.2",
     "ng-contenteditable": "^1.0.5",
     "rxjs": "^6.2.2",
     "zone.js": "^0.8.26"

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 //import { WorkerAppModule } from '@angular/platform-webworker';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule, Routes } from '@angular/router';
@@ -15,6 +16,7 @@ import { PaginaDireita2Component } from './pages/pagina-direita2/pagina-direita2
 import { TextoService } from './texto.service';
 
 import { rotas } from './routes';
+import { AppMaterialsModule } from './app.materials.module';
 
 @NgModule({
   declarations: [
@@ -27,10 +29,12 @@ import { rotas } from './routes';
   ],
   imports: [
     BrowserModule ,
+    FormsModule , 
+    BrowserAnimationsModule ,
+    AppMaterialsModule ,
+    FlexLayoutModule ,
     //WorkerAppModule ,
     //CommonModule ,
-    FormsModule , 
-    FlexLayoutModule ,
     RouterModule.forRoot(rotas)
   ],
   providers: [
