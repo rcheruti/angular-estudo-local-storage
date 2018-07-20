@@ -1,7 +1,7 @@
 
 import { first } from 'rxjs/operators';
 import { Component } from '@angular/core';
-import { TextoService } from '../../texto.service';
+import { StoreService } from '../../servicos/store.service';
 
 @Component({
   selector: 'app-pagina-central1',
@@ -12,15 +12,14 @@ export class PaginaCentral1Component {
   
   texto: string = '';
   
-  constructor(private textoService: TextoService) {
-    textoService.texto.pipe(first()).subscribe((txt)=>{
-      console.log('página 1 central carregando: ', txt);
+  constructor(private store: StoreService) {
+    this.store.texto.pipe(first()).subscribe((txt)=>{
       this.texto = txt;
     });
   }
   
   textoChange(){
-    this.textoService.send(this.texto);
+    this.store.texto.next(this.texto);
   }
   
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TextoService } from '../../texto.service';
+import { StoreService } from '../../servicos/store.service';
 
 @Component({
   selector: 'app-pagina-direita1',
@@ -12,18 +12,18 @@ export class PaginaDireita1Component implements OnInit {
   texto2: string = '';
   delayTexto2: number = 4000;
   
-  constructor(private textoService: TextoService) { }
+  constructor(private store: StoreService) { }
 
   ngOnInit() {
     console.log('Inicando página 1 direita');
-    this.textoService.texto.subscribe( txt =>{
+    this.store.texto.subscribe( txt =>{
       console.log('página 1 direita recebeu o valor: ', txt);
       this.texto = txt;
     });
     
     setTimeout(()=>{
       console.log('Inicando página 1 direita ouvinte 2');
-      this.textoService.texto.subscribe( txt =>{
+      this.store.texto.subscribe( txt =>{
         console.log('página 1 direita ouvinte 2 recebeu o valor: ', txt);
         this.texto2 = txt;
       });

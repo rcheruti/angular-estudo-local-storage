@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule, Routes } from '@angular/router';
-import { ContenteditableDirective } from 'ng-contenteditable';
+import { ContenteditableDirective } from './content-editable.directive';
 //import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
@@ -13,10 +13,10 @@ import { PaginaCentral1Component } from './pages/pagina-central1/pagina-central1
 import { PaginaCentral2Component } from './pages/pagina-central2/pagina-central2.component';
 import { PaginaDireita1Component } from './pages/pagina-direita1/pagina-direita1.component';
 import { PaginaDireita2Component } from './pages/pagina-direita2/pagina-direita2.component';
-import { TextoService } from './texto.service';
 
 import { rotas } from './routes';
 import { AppMaterialsModule } from './app.materials.module';
+import { StoreService } from './servicos/store.service';
 
 @NgModule({
   declarations: [
@@ -35,10 +35,10 @@ import { AppMaterialsModule } from './app.materials.module';
     FlexLayoutModule ,
     //WorkerAppModule ,
     //CommonModule ,
-    RouterModule.forRoot(rotas)
+    RouterModule.forRoot(rotas) ,
   ],
   providers: [
-    TextoService
+    StoreService
   ],
   bootstrap: [AppComponent]
 })
