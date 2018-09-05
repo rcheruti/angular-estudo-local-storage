@@ -18,17 +18,23 @@ export class StoreService {
     this.carregar('texto','texto',false);
   }
   
-  private carregar(attr: string, nome: string, isObj: boolean = false, moments: Array<string> = []){
-    let item = localStorage.getItem(nome);
-    if( isObj ){
-      item = JSON.parse( item );
-    }
-    for(let campo of moments){
-      let valor = item[campo];
-      if( valor ){
-        item[campo] = moment( valor );
+  private carregar(attr: string, nome: string, isObj: boolean = false, momentsFields: Array<string> = []){
+    let item: any = localStorage.getItem(nome);
+    if( !item ){ // não foi encontrado o valor (ou é uma string vazia)
+      if( isObj ) item = {};
+      else item = "";
+    }else{ // temos um valor, vamos analisar e tratar os dados
+      if( isObj ){
+        item = JSON.parse( item );
+      }
+      for(let campo of momentsFields){ // necessário tratar os dados que devem estar no formato do MomentJs
+        let valor = item[campo];
+        if( valor ){
+          item[campo] = moment( valor );
+        }
       }
     }
+    
     this[attr].next(item);
   }
   
