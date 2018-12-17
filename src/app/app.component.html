@@ -2,12 +2,29 @@
 
 <div class="container" fxLayout="row">
   
-  <div class="menu" fxFlex="300px">
-    <a [routerLink]="[{ outlets: { central: ['pagina-central-1'] } }]" routerLinkActive="active">Central 1</a>
-    <a [routerLink]="[{ outlets: { central: ['pagina-central-2'] } }]" routerLinkActive="active">Forms Template Driven (central 2)</a>
-    <a [routerLink]="[{ outlets: { direita: ['pagina-direita-1'] } }]" routerLinkActive="active">Direita 1</a>
-    <a [routerLink]="[{ outlets: { direita: ['pagina-direita-2'] } }]" routerLinkActive="active">Forms Reactive (direita 2)</a>
-  </div>
+  <nav class="menu" fxFlex="300px">
+    <div class="infos" fxLayout="row">
+      <div fxFlex="" class="infoCentral" #infoCentral></div>
+      <div fxFlex="" class="infoDireita" #infoDireita></div>
+    </div>
+    
+    <a fxLayout="row" [routerLink]="[{ outlets: { central: ['pagina-central-1'] } }]" routerLinkActive="active">
+      <div fxFlex="60px" class="linkImgContainer"><div class="linkLogo" #logoC1>C1</div></div>
+      <div fxFlex="">Central 1</div>
+    </a>
+    <a fxLayout="row" [routerLink]="[{ outlets: { central: ['pagina-central-2'] } }]" routerLinkActive="active">
+      <div fxFlex="60px" class="linkImgContainer"><div class="linkLogo" #logoC2>C2</div></div>
+      <div fxFlex="">Forms Template Driven (central 2)</div>
+    </a>
+    <a fxLayout="row" [routerLink]="[{ outlets: { direita: ['pagina-direita-1'] } }]" routerLinkActive="active">
+      <div fxFlex="60px" class="linkImgContainer"><div class="linkLogo" #logoD1>D1</div></div>
+      <div fxFlex="">Direita 1</div>
+    </a>
+    <a fxLayout="row" [routerLink]="[{ outlets: { direita: ['pagina-direita-2'] } }]" routerLinkActive="active">
+      <div fxFlex="60px" class="linkImgContainer"><div class="linkLogo" #logoD2>D2</div></div>
+      <div fxFlex="">Resposta Forms (direita 2)</div>
+    </a>
+  </nav>
   
   <div class="panelCenter" fxFlex="">
     <router-outlet name="central"></router-outlet>

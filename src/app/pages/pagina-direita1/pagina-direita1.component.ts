@@ -12,6 +12,8 @@ export class PaginaDireita1Component implements OnInit {
   texto2: string = '';
   delayTexto2: number = 4000;
   
+  timeoutHandler: any;
+  
   constructor(private store: StoreService) { }
 
   ngOnInit() {
@@ -21,7 +23,7 @@ export class PaginaDireita1Component implements OnInit {
       this.texto = txt;
     });
     
-    setTimeout(()=>{
+    this.timeoutHandler = setTimeout(()=>{
       console.log('Inicando página 1 direita ouvinte 2');
       this.store.texto.subscribe( txt =>{
         console.log('página 1 direita ouvinte 2 recebeu o valor: ', txt);
@@ -29,5 +31,9 @@ export class PaginaDireita1Component implements OnInit {
       });
     }, this.delayTexto2);
   }
-
+  
+  ngOnDestroy() {
+    if( this.timeoutHandler ) clearTimeout( this.timeoutHandler );
+  }
+  
 }

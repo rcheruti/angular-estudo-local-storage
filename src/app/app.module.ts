@@ -17,6 +17,7 @@ import { PaginaDireita2Component } from './pages/pagina-direita2/pagina-direita2
 import { rotas } from './routes';
 import { AppMaterialsModule } from './app.materials.module';
 import { StoreService } from './servicos/store.service';
+import { LifeCycleComponent } from './componentes/life-cycle/life-cycle.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { StoreService } from './servicos/store.service';
     PaginaCentral2Component,
     PaginaDireita1Component,
     PaginaDireita2Component,
-    ContenteditableDirective
+    ContenteditableDirective,
+    LifeCycleComponent
   ],
   imports: [
     BrowserModule ,

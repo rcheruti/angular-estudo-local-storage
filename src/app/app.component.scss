@@ -8,9 +8,47 @@
   border-right: 1px solid #ccc;
   background: #f6f6f6;
   
+  .infos{
+    height: 100px;
+    border-bottom: 1px solid #ccc;
+  }
+  
   a{
     display: block;
     padding: 10px;
+    position: relative;
+    text-decoration: none;
+    color: #777;
+    
+    &.active{
+      background: #fff;
+      box-shadow: 0 1px 4px #e4e4e4;
+      
+      &:after{
+        content: '';
+        display:block;
+        position: absolute;
+        border: 10px solid transparent;
+        border-left-color: #ccc;
+        height: 0;
+        width: 0;
+        left: calc(100% - 20px);
+        top: 9px;
+      }
+    }
+    
+    .linkImgContainer{
+      
+      .linkLogo{
+        border-radius: 50%;
+        background: #777;
+        color: #fff;
+        text-align: center;
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+      }
+    }
   }
 }
 
