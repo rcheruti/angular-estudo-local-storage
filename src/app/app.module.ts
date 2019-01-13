@@ -18,6 +18,7 @@ import { rotas } from './routes';
 import { AppMaterialsModule } from './app.materials.module';
 import { StoreService } from './servicos/store.service';
 import { LifeCycleComponent } from './componentes/life-cycle/life-cycle.component';
+import { PaginaPopmotionComponent } from './pages/pagina-popmotion/pagina-popmotion.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LifeCycleComponent } from './componentes/life-cycle/life-cycle.componen
     PaginaDireita1Component,
     PaginaDireita2Component,
     ContenteditableDirective,
-    LifeCycleComponent
+    LifeCycleComponent,
+    PaginaPopmotionComponent
   ],
   imports: [
     BrowserModule ,

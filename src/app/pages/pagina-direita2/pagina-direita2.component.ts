@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren, QueryList, ViewChild, ElementRef } from '@angular/core';
 import { Produto } from '../../entidades/produto';
 import { StoreService } from '../../servicos/store.service';
 
@@ -8,7 +8,7 @@ import { StoreService } from '../../servicos/store.service';
   styleUrls: ['./pagina-direita2.component.scss']
 })
 export class PaginaDireita2Component {
-
+  
   produto: Produto = null;
   
   constructor(private store: StoreService) {
